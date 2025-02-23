@@ -29,12 +29,6 @@ El módulo `package` se utiliza para administrar paquetes en sistemas Linux de m
 ## **2. Ejemplos de funcionamiento**
 # Estudio del módulo Ansible: `package`
 
-## Introducción a Ansible
-
-![h](img/ansible.png)
-
-Ansible es una herramienta de automatización de configuración y gestión de sistemas que permite administrar servidores de manera eficiente y sin agentes. Funciona utilizando SSH para conectarse a los nodos y ejecutar tareas definidas en playbooks escritos en YAML. Su sintaxis simple y su capacidad de trabajar en múltiples sistemas operativos lo hacen una opción ideal para la automatización de tareas repetitivas en entornos de TI.
-
 ## **Pasos previos: Ejecución del script `scriptmaquinas.sh`**
 
 Antes de ejecutar cualquier playbook en las máquinas de destino, es necesario ejecutar un script de configuración previo que esta  en la carpeta del proyecto. Este script, `scriptmaquinas.sh`, debe ejecutarse en todas las máquinas servidores donde se vayan a ejecutar las acciones de los playbooks. Esto asegura que los servidores estén preparados para recibir las configuraciones que definan los playbooks.
