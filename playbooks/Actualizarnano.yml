@@ -1,0 +1,8 @@
+- name: Actualizar nano
+  hosts: all
+  become: yes
+  tasks:
+    - name: Actualizar el paquete nano
+      ansible.builtin.package:
+        name: nano
+        state: latest

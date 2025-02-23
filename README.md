@@ -27,27 +27,37 @@ El módulo `package` se utiliza para administrar paquetes en sistemas Linux de m
 - **`absent`**: Elimina el paquete del sistema.
 
 ## **2. Ejemplos de funcionamiento**
+# Estudio del módulo Ansible: `package`
+
+## Introducción a Ansible
+
+![h](img/ansible.png)
+
+Ansible es una herramienta de automatización de configuración y gestión de sistemas que permite administrar servidores de manera eficiente y sin agentes. Funciona utilizando SSH para conectarse a los nodos y ejecutar tareas definidas en playbooks escritos en YAML. Su sintaxis simple y su capacidad de trabajar en múltiples sistemas operativos lo hacen una opción ideal para la automatización de tareas repetitivas en entornos de TI.
+
+## **Pasos previos: Ejecución del script `scriptmaquinas.sh`**
+
+Antes de ejecutar cualquier playbook en las máquinas de destino, es necesario ejecutar un script de configuración previo que esta  en la carpeta del proyecto. Este script, `scriptmaquinas.sh`, debe ejecutarse en todas las máquinas servidores donde se vayan a ejecutar las acciones de los playbooks. Esto asegura que los servidores estén preparados para recibir las configuraciones que definan los playbooks.
+
+[Script](scriptmaquinas.sh)
+
+```bash
+# Ejecutar el script en cada servidor:
+./scriptmaquinas.sh
+```
 
 ### Ejemplo 1: Instalación de un paquete
 
 Este playbook instala el paquete `htop` en cualquier distribución de Linux sin necesidad de especificar el gestor de paquetes.
 
-```yaml
-- name: Instalar htop
-  hosts: servidores
-  become: yes
-  tasks:
-    - name: Instalar el paquete htop
-      ansible.builtin.package:
-        name: htop
-        state: present
-```
+[InstalatHtop](playbooks/InstalatHtop.yml)
 
 **Captura del playbook:**  
-![Playbook Instalación](./imagenes/playbook_instalacion.png)
+![Resultado Instalación](/img/A1.png)
 
 **Captura del resultado:**  
-![Resultado Instalación](./imagenes/resultado_instalacion.png)
+![Resultado Instalación](/img/A2.png)
+![Resultado Instalación](/img/A3.png)
 
 ---
 
@@ -55,22 +65,10 @@ Este playbook instala el paquete `htop` en cualquier distribución de Linux sin 
 
 Este playbook actualiza el paquete `nano` en cualquier sistema Linux.
 
-```yaml
-- name: Actualizar nano
-  hosts: servidores
-  become: yes
-  tasks:
-    - name: Actualizar el paquete nano
-      ansible.builtin.package:
-        name: nano
-        state: latest
-```
+[ActualizarNano](playbooks/Actualizarnano.yml)
 
 **Captura del playbook:**  
-![Playbook Actualización](./imagenes/playbook_actualizacion.png)
-
-**Captura del resultado:**  
-![Resultado Actualización](./imagenes/resultado_actualizacion.png)
+![Playbook Actualización](/img/A4.png)
 
 ---
 
@@ -78,24 +76,15 @@ Este playbook actualiza el paquete `nano` en cualquier sistema Linux.
 
 Este playbook elimina el paquete `apache2` o `httpd`, dependiendo de la distribución.
 
-```yaml
-- name: Eliminar Apache
-  hosts: servidores
-  become: yes
-  tasks:
-    - name: Desinstalar Apache
-      ansible.builtin.package:
-        name: apache2
-        state: absent
-```
+[EliminarApache](playbooks/EliminarApache.yml)
 
 **Captura del playbook:**  
-![Playbook Eliminación](./imagenes/playbook_eliminacion.png)
+![Playbook Eliminación](/img/A4.png)
 
-**Captura del resultado:**  
-![Resultado Eliminación](./imagenes/resultado_eliminacion.png)
 
 ## **3. Referencias**
 
 - Documentación oficial de Ansible: [https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html)
+
+- [Manuel Domínguez ](https://github.com/mftienda)
 

@@ -1,0 +1,8 @@
+- name: Eliminar Apache
+  hosts: all
+  become: yes
+  tasks:
+    - name: Desinstalar Apache
+      ansible.builtin.package:
+        name: apache2
+        state: absent
