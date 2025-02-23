@@ -36,6 +36,8 @@ El módulo `package` se utiliza para administrar paquetes en sistemas Linux de m
 Cambiar las ips de las maquinas, en el archivo maquinas.
 Antes de ejecutar cualquier playbook en las máquinas de destino, es necesario ejecutar un script de configuración previo que esta  en la carpeta del proyecto. Este script, `scriptmaquinas.sh`, debe ejecutarse en todas las máquinas servidores donde se vayan a ejecutar las acciones de los playbooks. Esto asegura que los servidores estén preparados para recibir las configuraciones que definan los playbooks.
 
+
+[Maquinas](maquinas)
 [Script](scriptmaquinas.sh)
 
 ```bash
