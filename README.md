@@ -1,9 +1,10 @@
 # Estudio del módulo Ansible: `package`
 
-## Introducción a Ansible
 
 ![h](img/ansible.png)
 
+
+## Introducción a Ansible
 Ansible es una herramienta de automatización de configuración y gestión de sistemas que permite administrar servidores de manera eficiente y sin agentes. Funciona utilizando SSH para conectarse a los nodos y ejecutar tareas definidas en playbooks escritos en YAML. Su sintaxis simple y su capacidad de trabajar en múltiples sistemas operativos lo hacen una opción ideal para la automatización de tareas repetitivas en entornos de TI.
 
 ## **1. Nombre del módulo**
